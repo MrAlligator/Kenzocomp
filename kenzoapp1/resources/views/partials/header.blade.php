@@ -5,13 +5,13 @@
         <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
             <!-- Uncomment the line below if you also wish to use an image logo -->
             <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1 class="sitename">Kenzo Comp</h1>
+            <h1 class="sitename">kenzoComp</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="#hero" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#" data-url="{{ route('dashboard') }}" class="nav-link">Home</a></li>
+                <li><a href="#" data-url="{{ route('about') }}" class="nav-link">About</a></li>
                 <li><a href="#features">Features</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#pricing">Pricing</a></li>

@@ -103,5 +103,5 @@
 
         </div>
 
-    </section><!-- /Hero Section -->
+    </section>
 @endsection

@@ -28,22 +28,14 @@
 
     <!-- Main CSS File -->
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
-
-    <!-- =======================================================
-  * Template Name: iLanding
-  * Template URL: https://bootstrapmade.com/ilanding-bootstrap-landing-page-template/
-  * Updated: Nov 12 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body class="index-page">
 
     @include('partials.header')
 
-    <main class="main">
-        @yield('content')        
+    <main id="main" class="main">
+        @yield('content')
     </main>
 
     @include('partials.footer')
@@ -62,6 +54,39 @@
 
     <!-- Main JS File -->
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    {{-- Additional JS --}}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.nav-link').on('click', function(e) {
+                e.preventDefault();
+                let url = $(this).data('url');
+
+                $('.nav-link').removeClass('active');
+                $(this).addClass('active');
+
+                $('#main').html(`
+                    <section id="loading" class="loading section text-center py-5" style="margin-top: 10%">
+                        <div class="container" data-aos="fade-up" data-aos-delay="100">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-auto">
+                                    <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                                        <span class="visually-hidden">Loading...</span>
+                                    </div>
+                                    <p class="mt-3">Loading, please wait...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                `);
+
+                $.get(url, function(data) {
+                    let sectionOnly = $('<div>').html(data).find('section').prop('outerHTML');
+                    $('#main').html(sectionOnly);
+                });
+            });
+        });
+    </script>
 
 </body>
 
