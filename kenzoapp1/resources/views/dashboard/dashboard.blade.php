@@ -14,9 +14,8 @@
                         </div>
 
                         <h1 class="mb-4">
-                            Maecenas Vitae <br>
-                            Consectetur Led <br>
-                            <span class="accent-text">Vestibulum Ante</span>
+                            KENZO COMP<br>
+                            <span class="accent-text">Digitalize Your Business</span>
                         </h1>
 
                         <p class="mb-4 mb-md-5">
@@ -37,7 +36,7 @@
 
                 <div class="col-lg-6">
                     <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
-                        <img src="assets/img/illustration-1.webp" alt="Hero Image" class="img-fluid">
+                        <img src="assets/img/logo.png" alt="Hero Image" class="img-fluid">
 
                         <div class="customers-badge">
                             <div class="customer-avatars">
