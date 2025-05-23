@@ -42,14 +42,19 @@
 .light-background {
   --background-color: #f3f9ff;
   --surface-color: #ffffff;
+  --nav-color: #212529;  /* The default color of the main navmenu links */
+  --nav-hover-color: #0d83fd;
+  --contrast-color: #000000;
 }
 
 .dark-background {
-  --background-color: #0d83fd;
+  --background-color: #05213f;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #409dfd;
+  --surface-color: #05213f;
   --contrast-color: #ffffff;
+  --nav-color: #ffffff;  /* The default color of the main navmenu links */
+  --nav-hover-color: #0d83fd;
 }
 
 /* Smooth scroll */
@@ -188,6 +193,10 @@ h6 {
   margin: 0 0 0 30px;
   border-radius: 50px;
   transition: 0.3s;
+}
+
+.header .theme-btn {
+  color: var(--contrast-color);
 }
 
 .header .btn-getstarted:hover,

@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashController;
 use App\Http\Controllers\AboutController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PriceController;
+use App\Http\Controllers\ProductController;
 
 // Route::get('/', function () {
 //     // return view('welcome');
@@ -24,3 +27,6 @@ use App\Http\Controllers\AboutController;
 Route::get('/', [DashController::class, 'index'])->name('home');
 Route::get('/dashboard', [DashController::class, 'index'])->name('dashboard');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/product', [ProductController::class, 'index'])->name('product');
+Route::get('/pricing', [PriceController::class, 'index'])->name('pricing');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');

@@ -28,6 +28,23 @@
 
     <!-- Main CSS File -->
     <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet">
+
+    <style>
+        body.dark-theme {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        body.dark-theme a {
+            color: #90caf9;
+        }
+
+        body.dark-theme .card,
+        body.dark-theme .dropdown-menu {
+            background-color: #1e1e1e;
+            color: #ffffff;
+        }
+    </style>
 </head>
 
 <body class="index-page">
@@ -58,6 +75,15 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(document).ready(function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                $('body').addClass(savedTheme + '-background');
+            } else {
+                localStorage.setItem('theme', 'light');
+                const savedTheme = localStorage.getItem('theme');
+                $('body').addClass(savedTheme + '-background');
+            }
+
             $('.nav-link').on('click', function(e) {
                 e.preventDefault();
                 let url = $(this).data('url');
@@ -85,11 +111,18 @@
                     $('#main').html(sectionOnly);
                 });
             });
+
+            // Change theme on click
+            $('.theme-option').on('click', function(e) {
+                e.preventDefault();
+                const selectedTheme = $(this).data('theme');
+                $('body').removeClass('light-background dark-background');
+                $('body').addClass(selectedTheme + '-background');
+                localStorage.setItem('theme', selectedTheme);
+            });
         });
     </script>
 
 </body>
-
-</html>
 
 </html>
