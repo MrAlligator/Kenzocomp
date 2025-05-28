@@ -44,6 +44,21 @@
             background-color: #1e1e1e;
             color: #ffffff;
         }
+
+        .theme-settings .btn.theme-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .theme-settings .dropdown-menu {
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
     </style>
 </head>
 
@@ -57,6 +72,27 @@
 
     @include('partials.footer')
 
+    <div class="dropdown theme-settings position-fixed end-0 m-3" style="z-index: 9999; bottom: 50px;">
+        <button class="btn btn-light border-0 bg-transparent p-2 theme-btn" type="button" data-bs-toggle="dropdown"
+            aria-expanded="false" title="Pengaturan">
+            <i class="bi bi-gear-fill fs-4"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end p-3" style="min-width: 200px;">
+            <li>
+                <h6 class="dropdown-header">Tema</h6>
+                <a class="dropdown-item theme-option" data-theme="light" href="#">🌞 Light Theme</a>
+                <a class="dropdown-item theme-option" data-theme="dark" href="#">🌙 Dark Theme</a>
+            </li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li>
+                <h6 class="dropdown-header">Bahasa</h6>
+                <a class="dropdown-item lang-option" data-lang="id" href="#">🇮🇩 Bahasa Indonesia</a>
+                <a class="dropdown-item lang-option" data-lang="en" href="#">🇬🇧 English</a>
+            </li>
+        </ul>
+    </div>
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
             class="bi bi-arrow-up-short"></i></a>
