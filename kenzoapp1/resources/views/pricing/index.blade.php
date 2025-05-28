@@ -1,19 +1,17 @@
 @extends('layouts.layout')
 
 @section('content')
-    <section id="pricing" class="pricing section" style="margin-top: 5%">
+    <section id="pricing" class="pricing section">
         <div class="container section-title" data-aos="fade-up">
-            <h2>Pricing</h2>
-            <p>Pilih paket <b style="">Pengembangan</b> dari software house kami dan nikmati semua fitur terbaik untuk pengembangan
-                aplikasi yang powerful, performa maksimal tanpa batas, serta dukungan teknis live 24/7. Solusi custom,
-                integrasi lengkap, dan pemeliharaan penuh untuk memastikan bisnis Anda terus berkembang tanpa hambatan!</p>
+            <h2>{{ __('pricing.title') }}</h2>
+            <p>{{ __('pricing.description') }}</p>
         </div>
         <div class="container" data-aos="fade-up" data-aos-delay="100">
             <div class="row g-4 justify-content-center">
                 <!-- Basic Plan -->
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="pricing-card">
-                        <h3>Basic Plan</h3>
+                        <h3>{{ __('pricing.basic-plan') }}</h3>
                         <h4>Recommended For:</h4>
                         <div class="recommended-icons d-flex flex-wrap gap-4 mb-3">
                             <div class="icon-box text-center">
@@ -70,7 +68,7 @@
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="pricing-card {{-- popular --}}">
                         {{-- <div class="popular-badge">Most Popular</div> --}}
-                        <h3>Standard Plan</h3>
+                        <h3>{{ __('pricing.standard-plan') }}</h3>
                         <h4>Recommended For:</h4>
                         <div class="recommended-icons d-flex flex-wrap gap-3 mb-3">
                             <div class="icon-box text-center">
@@ -130,7 +128,7 @@
                 <!-- Premium Plan -->
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="pricing-card">
-                        <h3>Premium Plan</h3>
+                        <h3>{{ __('pricing.premium-plan') }}</h3>
                         <h4>Recommended For:</h4>
                         <div class="recommended-icons d-flex flex-wrap gap-3 mb-3">
                             <div class="icon-box text-center">

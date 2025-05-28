@@ -13,15 +13,11 @@
 
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="#" data-url="{{ route('dashboard') }}" class="nav-link home"
-                        data-menu="home">Home</a></li>
-                <li><a href="#" data-url="{{ route('about') }}" class="nav-link about" data-menu="about">About</a>
-                </li>
-                {{-- <li><a href="#features">Features</a></li> --}}
-                <li><a href="#" data-url="{{ route('product') }}" class="nav-link product"
-                        data-menu="product">Product</a></li>
-                <li><a href="#" data-url="{{ route('pricing') }}" class="nav-link pricing"
-                        data-menu="pricing">Pricing</a></li>
+                <li><a href="#" data-url="{{ route('dashboard') }}" class="nav-link" data-menu="home">{{ __('general.home') }}</a></li>
+                <li><a href="#" data-url="{{ route('about') }}" class="nav-link" data-menu="about">{{ __('general.about') }}</a></li>
+                <li><a href="#" data-url="{{ route('product') }}" class="nav-link" data-menu="product">{{ __('general.product') }}</a></li>
+                <li><a href="#" data-url="{{ route('pricing') }}" class="nav-link" data-menu="pricing">{{ __('general.pricing') }}</a></li>
+                <li><a href="#" data-url="{{ route('contact') }}" class="nav-link" data-menu="contact">{{ __('general.contact') }}</a></li>
                 {{-- <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
                     <ul>
                         <li><a href="#">Dropdown 1</a></li>
@@ -39,8 +35,6 @@
                         <li><a href="#">Dropdown 4</a></li>
                     </ul>
                 </li> --}}
-                <li><a href="#" data-url="{{ route('contact') }}" class="nav-link contact"
-                        data-menu="contact">Contact</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>

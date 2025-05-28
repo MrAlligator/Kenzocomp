@@ -1,14 +1,10 @@
 @extends('layouts.layout')
 
 @section('content')
-    <section id="services" class="services section" style="margin-top: 5%">
+    <section id="services" class="services section">
         <div class="container section-title" data-aos="fade-up">
-            <h2>Products</h2>
-            <p>We are a software house that develops a wide range of innovative digital products to support business and
-                operational needs. Our offerings include project management systems, ERP (Enterprise Resource Planning)
-                applications, e-commerce platforms, inventory management systems, and custom web and mobile-based solutions.
-                Each product is designed with a focus on efficiency, scalability, and user-friendliness, delivering real
-                value to users and helping them achieve their business goals effectively.</p>
+            <h2>{{ __('products.title') }}</h2>
+            <p>{{ __('products.description') }}</p>
         </div>
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -18,7 +14,7 @@
                         <li class="nav-item">
                             <a class="nav-link {{ $cat->cat_id == 1 ? 'active show' : '' }}" data-bs-toggle="tab"
                                 data-bs-target="#products-tab-{{ $cat->cat_id }}">
-                                <h4>{{ $cat->cat_name }}</h4>
+                                <h4>{{ $cat->{'cat_name_' . session('lang')} }}</h4>
                             </a>
                         </li>
                     @endforeach
@@ -31,9 +27,23 @@
                         @if ($product->prod_cat_id == 1)
                             <div class="row g-4 mt-2 mb-2">
                                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="row g-0">
+                                    <div class="row g-4">
                                         <div class="col-md-4 d-flex justify-content-center align-items-center">
-                                            <div id="productCarousel{{ $product->prod_id }}" class="carousel slide" data-bs-ride="carousel">
+                                            <div id="productCarousel{{ $product->prod_id }}" class="carousel slide"
+                                                data-bs-ride="carousel">
+                                                <div class="carousel-indicators">
+                                                    <button type="button"
+                                                        data-bs-target="#productCarousel{{ $product->prod_id }}"
+                                                        data-bs-slide-to="0" class="active" aria-current="true"
+                                                        aria-label="Slide 1"></button>
+                                                    <button type="button"
+                                                        data-bs-target="#productCarousel{{ $product->prod_id }}"
+                                                        data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                                    <button type="button"
+                                                        data-bs-target="#productCarousel{{ $product->prod_id }}"
+                                                        data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                                </div>
+
                                                 <div class="carousel-inner text-center">
                                                     <div class="carousel-item active">
                                                         <img src="{{ asset('assets/img/sample/' . $product->prod_pict1) }}"
@@ -53,11 +63,15 @@
                                                 </div>
 
                                                 <!-- Tombol navigasi -->
-                                                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel{{ $product->prod_id }}" data-bs-slide="prev">
+                                                <button class="carousel-control-prev" type="button"
+                                                    data-bs-target="#productCarousel{{ $product->prod_id }}"
+                                                    data-bs-slide="prev">
                                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Sebelumnya</span>
                                                 </button>
-                                                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel{{ $product->prod_id }}" data-bs-slide="next">
+                                                <button class="carousel-control-next" type="button"
+                                                    data-bs-target="#productCarousel{{ $product->prod_id }}"
+                                                    data-bs-slide="next">
                                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Berikutnya</span>
                                                 </button>
@@ -66,9 +80,10 @@
                                         <div class="col-md">
                                             <div class="card-body">
                                                 <h3 class="card-title">{{ $product->prod_name }}</h3>
-                                                <p class="card-text">{{ $product->prod_summary }}</p>
-                                                <a href="" class="read-more">Read More <i class="bi bi-arrow-right"></i></a><br>
-                                                <span class="badge bg-primary">{{ $product->category->cat_name }}</span>
+                                                <p class="card-text">{{ $product->{'prod_summary_' . session('lang')} }}</p>
+                                                <a href="" class="read-more">Read More <i
+                                                        class="bi bi-arrow-right"></i></a><br>
+                                                <span class="badge badge-cat">{{ $product->category->{'cat_name_' . session('lang')} }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -84,7 +99,8 @@
                                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                                     <div class="row g-0">
                                         <div class="col-md-4 d-flex justify-content-center align-items-center">
-                                            <div id="productCarousel{{ $product->prod_id }}" class="carousel slide" data-bs-ride="carousel">
+                                            <div id="productCarousel{{ $product->prod_id }}" class="carousel slide"
+                                                data-bs-ride="carousel">
                                                 <div class="carousel-inner text-center">
                                                     <div class="carousel-item active">
                                                         <img src="{{ asset('assets/img/sample/' . $product->prod_pict1) }}"
@@ -93,22 +109,26 @@
                                                     </div>
                                                     <div class="carousel-item">
                                                         <img src="{{ asset('assets/img/sample/' . $product->prod_pict2) }}"
-                                                            class="img-fluid rounded" style="max-width: 90%; height: auto;"
-                                                            alt="Produk B">
+                                                            class="img-fluid rounded"
+                                                            style="max-width: 90%; height: auto;" alt="Produk B">
                                                     </div>
                                                     <div class="carousel-item">
                                                         <img src="{{ asset('assets/img/sample/' . $product->prod_pict3) }}"
-                                                            class="img-fluid rounded" style="max-width: 90%; height: auto;"
-                                                            alt="Produk C">
+                                                            class="img-fluid rounded"
+                                                            style="max-width: 90%; height: auto;" alt="Produk C">
                                                     </div>
                                                 </div>
 
                                                 <!-- Tombol navigasi -->
-                                                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel{{ $product->prod_id }}" data-bs-slide="prev">
+                                                <button class="carousel-control-prev" type="button"
+                                                    data-bs-target="#productCarousel{{ $product->prod_id }}"
+                                                    data-bs-slide="prev">
                                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Sebelumnya</span>
                                                 </button>
-                                                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel{{ $product->prod_id }}" data-bs-slide="next">
+                                                <button class="carousel-control-next" type="button"
+                                                    data-bs-target="#productCarousel{{ $product->prod_id }}"
+                                                    data-bs-slide="next">
                                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Berikutnya</span>
                                                 </button>
@@ -118,8 +138,9 @@
                                             <div class="card-body">
                                                 <h3 class="card-title">{{ $product->prod_name }}</h3>
                                                 <p class="card-text">{{ $product->prod_summary }}</p>
-                                                <a href="" class="read-more">Read More <i class="bi bi-arrow-right"></i></a><br>
-                                                <span class="badge bg-primary">{{ $product->category->cat_name }}</span>
+                                                <a href="" class="read-more">Read More <i
+                                                        class="bi bi-arrow-right"></i></a><br>
+                                                <span class="badge bg-primary">{{ $product->category->{'cat_name_' . session('lang')} }}</span>
                                             </div>
                                         </div>
                                     </div>
@@ -135,31 +156,36 @@
                                 <div class="service-card" data-aos="fade-up" data-aos-delay="200">
                                     <div class="row g-0">
                                         <div class="col-md-4 d-flex justify-content-center align-items-center">
-                                            <div id="productCarousel{{ $product->prod_id }}" class="carousel slide" data-bs-ride="carousel">
+                                            <div id="productCarousel{{ $product->prod_id }}" class="carousel slide"
+                                                data-bs-ride="carousel">
                                                 <div class="carousel-inner text-center">
                                                     <div class="carousel-item active">
                                                         <img src="{{ asset('assets/img/sample/' . $product->prod_pict1) }}"
-                                                            class="img-fluid rounded" style="max-width: 90%; height: auto;"
-                                                            alt="Produk A">
+                                                            class="img-fluid rounded"
+                                                            style="max-width: 90%; height: auto;" alt="Produk A">
                                                     </div>
                                                     <div class="carousel-item">
                                                         <img src="{{ asset('assets/img/sample/' . $product->prod_pict2) }}"
-                                                            class="img-fluid rounded" style="max-width: 90%; height: auto;"
-                                                            alt="Produk B">
+                                                            class="img-fluid rounded"
+                                                            style="max-width: 90%; height: auto;" alt="Produk B">
                                                     </div>
                                                     <div class="carousel-item">
                                                         <img src="{{ asset('assets/img/sample/' . $product->prod_pict3) }}"
-                                                            class="img-fluid rounded" style="max-width: 90%; height: auto;"
-                                                            alt="Produk C">
+                                                            class="img-fluid rounded"
+                                                            style="max-width: 90%; height: auto;" alt="Produk C">
                                                     </div>
                                                 </div>
 
                                                 <!-- Tombol navigasi -->
-                                                <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel{{ $product->prod_id }}" data-bs-slide="prev">
+                                                <button class="carousel-control-prev" type="button"
+                                                    data-bs-target="#productCarousel{{ $product->prod_id }}"
+                                                    data-bs-slide="prev">
                                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Sebelumnya</span>
                                                 </button>
-                                                <button class="carousel-control-next" type="button" data-bs-target="#productCarousel{{ $product->prod_id }}" data-bs-slide="next">
+                                                <button class="carousel-control-next" type="button"
+                                                    data-bs-target="#productCarousel{{ $product->prod_id }}"
+                                                    data-bs-slide="next">
                                                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                                     <span class="visually-hidden">Berikutnya</span>
                                                 </button>
@@ -169,8 +195,9 @@
                                             <div class="card-body">
                                                 <h3 class="card-title">{{ $product->prod_name }}</h3>
                                                 <p class="card-text">{{ $product->prod_summary }}</p>
-                                                <a href="" class="read-more">Read More <i class="bi bi-arrow-right"></i></a><br>
-                                                <span class="badge bg-primary">{{ $product->cat_name }}</span>
+                                                <a href="" class="read-more">Read More <i
+                                                        class="bi bi-arrow-right"></i></a><br>
+                                                <span class="badge bg-primary">{{ $product->category->{'cat_name_' . session('lang')} }}</span>
                                             </div>
                                         </div>
                                     </div>

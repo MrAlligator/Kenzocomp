@@ -15,7 +15,7 @@
 
                         <h1 class="mb-4">
                             KENZO COMP<br>
-                            <span class="accent-text">Digitalize Your Business</span>
+                            <span class="accent-text">{{ __('dashboard.bigTitle') }}</span>
                         </h1>
 
                         <p class="mb-4 mb-md-5">

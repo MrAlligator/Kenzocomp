@@ -16,7 +16,8 @@ return new class extends Migration {
             $table->string('prod_pict1')->nullable();
             $table->string('prod_pict2')->nullable();
             $table->string('prod_pict3')->nullable();
-            $table->text('prod_summary')->nullable();
+            $table->longText('prod_summary_en')->nullable();
+            $table->longText('prod_summary_id')->nullable();
             $table->unsignedBigInteger('prod_cat_id');
             $table->timestamps();
 

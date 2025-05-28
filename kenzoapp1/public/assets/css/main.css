@@ -45,6 +45,7 @@
   --nav-color: #212529;  /* The default color of the main navmenu links */
   --nav-hover-color: #0d83fd;
   --contrast-color: #000000;
+  --accent-color: #4fbcfc;
 }
 
 .dark-background {
@@ -55,6 +56,7 @@
   --contrast-color: #ffffff;
   --nav-color: #ffffff;  /* The default color of the main navmenu links */
   --nav-hover-color: #0d83fd;
+  --accent-color: #0d83fd;
 }
 
 /* Smooth scroll */
@@ -90,6 +92,17 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font);
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: rgba(0, 0, 0, 0.6); /* Warna gelap semi-transparan */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.carousel-indicators .active {
+  background-color: #000; /* Warna indikator aktif lebih pekat */
 }
 
 /* PHP Email Form Messages
@@ -969,6 +982,12 @@ section,
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+.about {
+  position: relative;
+  padding-top: 160px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 95%) 50%, color-mix(in srgb, var(--accent-color), transparent 98%) 25%, transparent 50%);
+}
+
 .about .about-meta {
   color: var(--accent-color);
   font-weight: 600;
@@ -1701,6 +1720,12 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+.services {
+  position: relative;
+  padding-top: 160px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 95%) 50%, color-mix(in srgb, var(--accent-color), transparent 98%) 25%, transparent 50%);
+}
+
 .services .nav-tabs {
   border: 0;
   background-color: color-mix(in srgb, var(--default-color), transparent 96%);
@@ -1880,9 +1905,21 @@ section,
   transform: translateX(5px);
 }
 
+.services .service-card .card-body .badge-cat {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  display: inline-block;
+}
+
 /*--------------------------------------------------------------
 # Pricing Section
 --------------------------------------------------------------*/
+.pricing {
+  position: relative;
+  padding-top: 160px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-color), transparent 95%) 50%, color-mix(in srgb, var(--accent-color), transparent 98%) 25%, transparent 50%);
+}
+
 .pricing .pricing-card {
   height: 100%;
   padding: 2rem;

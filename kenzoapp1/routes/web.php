@@ -30,3 +30,7 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/product', [ProductController::class, 'index'])->name('product');
 Route::get('/pricing', [PriceController::class, 'index'])->name('pricing');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/set-language', function (\Illuminate\Http\Request $request) {
+    session(['lang' => $request->lang]);
+    return response()->json(['status' => 'ok']);
+})->name('set.language');

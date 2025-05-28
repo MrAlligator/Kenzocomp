@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-    <section id="about" class="about section" style="margin-top: 5%">
+    <section id="about" class="about section">
 
         <div class="container" data-aos="fade-up" data-aos-delay="100">
 
