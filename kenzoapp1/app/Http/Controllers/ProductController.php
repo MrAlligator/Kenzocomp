@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CategoriesModel;
 use Illuminate\Http\Request;
+use App\Models\ProductModel;
 
 class ProductController extends Controller
 {
@@ -11,7 +13,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view('product.index');
+        $products = ProductModel::with('category')->get();
+        $categories = CategoriesModel::all();
+        return view('product.index', compact('products', 'categories'));
     }
 
     /**
