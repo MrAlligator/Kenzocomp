@@ -88,10 +88,10 @@
             aria-expanded="false" title="Pengaturan">
             <i class="bi bi-gear-fill fs-4"></i>
         </button>
-        <ul class="dropdown-menu dropdown-menu-end p-3" style="min-width: 200px;">
+        <ul class="dropdown-menu dropdown-menu-end p-3" style="min-width: 100px;">
             <li>
-                <h6 class="dropdown-header">{{ __('general.themes') }}</h6>
-                <div class="d-flex gap-3 px-2" style="align-content: center">
+                <h6 class="dropdown-header text-center">{{ __('general.themes') }}</h6>
+                <div class="d-flex justify-content-center gap-3">
                     <a class="theme-option text-dark fs-4" data-theme="light" href="#" title="Tema Terang">
                         <i class="bi bi-brightness-high"></i>
                     </a>
@@ -104,8 +104,8 @@
                 <hr class="dropdown-divider">
             </li>
             <li>
-                <h6 class="dropdown-header">{{ __('general.language') }}</h6>
-                <div class="d-flex px-3">
+                <h6 class="dropdown-header text-center">{{ __('general.language') }}</h6>
+                <div class="d-flex px-3 justify-content-center">
                     <a class="lang-option {{ session('lang') == 'id' ? 'active' : '' }} p-2" data-lang="id"
                         href="#" title="Bahasa Indonesia">
                         <i class="flag-icon flag-icon-id"></i>

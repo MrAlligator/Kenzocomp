@@ -6,5 +6,5 @@ return [
     'pricing' => 'Harga',
     'contact' => 'Kontak',
     'language' => 'Bahasa',
-    'theme' => 'Tema',
+    'themes' => 'Tema',
 ];
